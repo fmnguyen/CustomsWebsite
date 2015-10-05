@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Customs</title>
+        <link rel="shortcut icon" href="customs.ico">
+        <link rel="stylesheet" href="styles/customs.css">
+    </head>
+    <body class="index">
+        <div class="bg"></div>
+        <div class="mesh"></div>
+        <div class="entercontainer">
+            <a class="enter" href="home.html">ENTER</a>
+        </div>
+
+        <div id="logocontainer" class="logocontainer">
+            <div class="logo" id="logo">
+                <img src="images/logo_black.jpg" class="customs" alt="Customs Logo">
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/oridomi.min.js"></script>
+        <script type="text/javascript">
+
+            $(
+                function()
+                {
+                    var $logo = $( '#logo' );
+
+                    var Options = {
+                        vPanels: 5
+                    };
+                    var $domi = $logo.oriDomi( Options );
+
+                    $logo.click(
+                        function()
+                        {
+                            $domi.oriDomi( 'foldUp' );
+
+                            setTimeout(
+                                function()
+                                {
+                                    $( '#logocontainer' ).fadeOut();
+                                },
+                                1000
+                            );
+                        }
+                    );
+                }
+            );
+
+        </script>
+    </body>
+</html>

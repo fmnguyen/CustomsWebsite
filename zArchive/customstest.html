@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Customs</title>
+        <link rel="shortcut icon" href="customs.ico">
+        <link rel="stylesheet" href="styles/thumbnails.css">
+        <script type="text/javascript" src="rollover_library.js"></script>
+        <script>
+            var $ = function (id) { return document.getElementById(id);}
+                var rollover;
+                window.onload = function () {
+                    rollover1 = new Rollover("addison", "images/thumbnails/bird1.gif");
+                    rollover2 = new Rollover("pomo", "images/thumbnails/bird1.gif");
+                }
+        </script>
+         <script type="text/javascript">
+            function printPg() {
+                window.print(); 
+            }
+        </script>
+    </head>
+    <body>             
+        <h2>Poster Gallery</h2>
+            <p>
+                <a href="addison.html" target="_blank"><img id="addison" src="images/thumbnails/addison1.jpg" alt="Photo1"></a>
+                <a href="pomo.html" target="_blank"><img id="pomo" src="images/thumbnails/pomo1.jpg" alt="Photo2"></a>
+                <a href="rell.html" target="_blank"><img src="images/thumbnails/rell1.jpg" alt="Photo3"></a>
+                <a href="samo.html" target="_blank"><img src="images/thumbnails/samo1.jpg" alt="Photo4"></a>
+                <a href="sophie.html" target="_blank"><img src="images/thumbnails/sophie1.jpg" alt="Photo5"></a>
+            </p>
+            <a href="customsmap.html" target="_blank">More...</a>
+            <input type="button" id="print" value="Print this Page" onClick="printPg()">
+    </body>
+    <br>
+    <footer>
+        <script type="text/javascript">
+            var today = new Date();
+            document.write(today.toDateString());
+         </script>
+    </footer>
+</html>
