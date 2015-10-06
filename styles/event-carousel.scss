@@ -1,0 +1,107 @@
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+@mixin breakpoint($point) {
+	@media only screen and (min-width: $point) {
+		@content;
+	}
+}
+
+.event-carousel {
+	position: relative;
+	margin: 50px auto;
+	@include breakpoint(768px) {width:750px}
+	@include breakpoint(1024px) {width:800px}
+	@include breakpoint(1280px) {width:1000px}
+}
+
+.arrows-container {
+	position: absolute;
+	right: 11px;
+	top: 0;
+
+	.arrow {
+		width: 25px;
+		height: 20px;
+		opacity: 1.0;
+		@include transition(all 0.3s ease);
+		&:hover {	
+			opacity: 0.5;
+			cursor: pointer;
+			@include transition(all 0.3s ease);
+		}
+	}
+}
+
+.upcoming-shows {
+	color: white;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-size: 1.0em;
+	font-family: "Helvetica-Neue", Helvetica, sans-serif;
+	padding-bottom: 20px;
+	margin-left: 13px;
+}
+
+.events-container {
+	display: block;
+	width: 100%;
+	&:focus {outline: none;}
+}
+
+.img-wrapper {
+	height: 75%;
+	width: 90%;
+	position: relative;
+	margin: 0 auto;
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.event-date {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 1.0);
+	padding: 10px 10px;
+	text-transform: uppercase;
+	font-family: "Helvetica-Neue", Helvetica, sans-serif;
+	/*border: 1px #A2A2A2 solid;*/
+
+	.event-date-month {
+		font-size: 0.7em;
+		letter-spacing: 2.0px;
+	}
+
+	.event-date-day {
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+}
+
+.event-summary {
+	text-align: center;
+	.event-title {
+		font-weight: 700;
+		font-size: 0.9em;
+		letter-spacing: 1.0px;
+		padding-bottom: 10px;
+		color: white;
+	}
+	.event-ticket {
+		font-color: #999;
+		text-decoration: none;
+		font-size: 0.9em;
+		font-family: "Helvetica-Neue", Helvetica, sans-serif;
+		font-weight: 300;
+	}
+}
