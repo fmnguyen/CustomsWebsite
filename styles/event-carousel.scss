@@ -14,10 +14,10 @@
 
 .event-carousel {
 	position: relative;
-	margin: 50px auto;
-	@include breakpoint(768px) {width:750px}
-	@include breakpoint(1024px) {width:800px}
-	@include breakpoint(1280px) {width:1000px}
+	margin: 30px auto;
+	@include breakpoint(768px) {width:750px;margin:50px auto;}
+	@include breakpoint(1024px) {width:800px;}
+	@include breakpoint(1280px) {width:1000px;}
 }
 
 .arrows-container {
@@ -47,12 +47,13 @@
 	font-family: "Helvetica-Neue", Helvetica, sans-serif;
 	padding-bottom: 20px;
 	margin-left: 13px;
+
 }
 
 .events-container {
 	display: block;
 	width: 100%;
-	&:focus {outline: none;}
+	.event {&:focus{outline:none;}}
 }
 
 .img-wrapper {

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
 	$('.events-container').slick({
 		infinite: false,
   		focusOnSelect: false,

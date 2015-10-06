@@ -163,7 +163,7 @@ a:active { color: red; }
 	z-index: -1;
 }
 .party {
-	width: 53.125em;
+	width: 90%;
 	margin: 0 auto;
 	margin-top: 2em;
 }
@@ -174,7 +174,7 @@ a:active { color: red; }
 	margin-right: auto;
 }
 .intro {
-	width: 53.125em;
+	width: 90%;
 	margin: 0 auto;
 	padding: 1em;
 	margin-top: 1em;
@@ -192,6 +192,32 @@ a:active { color: red; }
 }
 .home {
 	width: 53.125em;
+}
+@media screen and (min-width: 480px) {
+	.intro {
+		width: 90%;
+	}
+	.party {
+		width: 90%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.intro {
+		width: 90%;
+	}
+	.party {
+		width: 90%;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.intro {
+		width: 900px;
+	}
+	.party {
+		width: 900px;
+	}
 }
 
 /* WHAT IS CUSTOMS PAGE STYLES */

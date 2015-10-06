@@ -1,9 +1,10 @@
 .event-carousel {
   position: relative;
-  margin: 50px auto; }
+  margin: 30px auto; }
   @media only screen and (min-width: 768px) {
     .event-carousel {
-      width: 750px; } }
+      width: 750px;
+      margin: 50px auto; } }
   @media only screen and (min-width: 1024px) {
     .event-carousel {
       width: 800px; } }
@@ -46,7 +47,7 @@
 .events-container {
   display: block;
   width: 100%; }
-  .events-container:focus {
+  .events-container .event:focus {
     outline: none; }
 
 .img-wrapper {
