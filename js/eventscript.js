@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$.getJSON('events.json', function( data ) {
+	$.getJSON('json/events.json', function( data ) {
 		$.each(data.events.event, function(i, item) {
 			var $month = $('<span>', {class: "event-date-month", text: item.date.month.substring(0,3)}),
 				$day = $('<span>', {class: "event-date-day", text: item.date.day}),
