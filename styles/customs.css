@@ -174,12 +174,12 @@ a:active { color: red; }
 	margin-right: auto;
 }
 .intro {
-	width: 90%;
+	width: 85%;
 	margin: 0 auto;
 	padding: 1em;
-	margin-top: 1em;
+	margin-top: 30px;
 	margin-bottom: 2em;
-	border-radius: 10px;
+	border-radius: 5px;
 	background-color: rgb(35,35,35);
 }
 .july {
@@ -191,33 +191,24 @@ a:active { color: red; }
 	color: #C01D8A;
 }
 .home {
-	width: 53.125em;
+	width: 85%;
 }
 @media screen and (min-width: 480px) {
-	.intro {
-		width: 90%;
-	}
-	.party {
-		width: 90%;
-	}
+	.intro {width: 90%;}
+	.party {width: 90%;}
+	.home {width: 90%;}
 }
 
 @media screen and (min-width: 768px) {
-	.intro {
-		width: 90%;
-	}
-	.party {
-		width: 90%;
-	}
+	.intro {width: 90%;}
+	.party {width: 90%;}
+	.home {width: 90%;}
 }
 
 @media screen and (min-width: 1024px) {
-	.intro {
-		width: 900px;
-	}
-	.party {
-		width: 900px;
-	}
+	.intro {width: 900px;}
+	.party {width: 900px;}
+	.home {width: 900px;}
 }
 
 /* WHAT IS CUSTOMS PAGE STYLES */

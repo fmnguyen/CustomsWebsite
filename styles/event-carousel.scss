@@ -53,7 +53,7 @@
 .events-container {
 	display: block;
 	width: 100%;
-	.event {&:focus{outline:none;}}
+	.event-show {&:focus{outline:none;}}
 }
 
 .img-wrapper {

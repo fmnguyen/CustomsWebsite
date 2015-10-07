@@ -47,7 +47,7 @@
 .events-container {
   display: block;
   width: 100%; }
-  .events-container .event:focus {
+  .events-container .event-show:focus {
     outline: none; }
 
 .img-wrapper {
