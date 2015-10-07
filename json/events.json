@@ -42,7 +42,7 @@
           "month": "November",
           "day": "5"
         }
-      } // the last object cannot have a comma at the end!
+      }
     ]
   }
 }
