@@ -2,47 +2,47 @@
   "events": {
     "event": [
       {
-        "id": "ultrademon",
-        "img": "images/events/ultrademon.jpg",
-        "title": "Ultrademon, Komono",
-        "venue": "Kremwerk",
+        "id": "lido",
+        "img": "images/events/lido.jpeg",
+        "title": "Lido & Special Guests",
+        "venue": "The Crocodile",
         "ticket": {
-          "url": "http://kremwerk.com/event/ultrademon-komono-zenojim-graz-leukos/"
+          "url": "https://www.ticketfly.com/purchase/event/863201"
         },
         "date": {
-          "year": "2014",
-          "month": "January",
-          "day": "22"
+          "year": "2015",
+          "month": "October",
+          "day": "21"
         }
       },
       {
-        "id": "addison-groove",
-        "img": "images/events/addison.jpg",
-        "title": "Addison Groove, Seimei, Korma",
-        "venue": "Chop Suey",
+        "id": "basenji",
+        "img": "images/events/basenji.png",
+        "title": "Basenji",
+        "venue": "Kremwerk",
         "ticket": {
-          "url": "http://chopsuey.com/calendar/dj-paypal-dj-earl-seimei-korma/"
+          "url": "https://www.ticketfly.com/purchase/event/963961"
         },
         "date": {
-          "year": "2014",
-          "month": "September",
-          "day": "14"
+          "year": "2015",
+          "month": "October",
+          "day": "29"
         }
       },      
       {
-        "id": "sophie",
-        "img": "images/events/sophie.jpg",
-        "title": "Sophie, Andrea",
-        "venue": "Q Nightclub",
+        "id": "lefto",
+        "img": "images/events/lefto.png",
+        "title": "LeFtO, SassyBlack, LadyRyan, Diogenes",
+        "venue": "Kremwerk",
         "ticket": {
-          "url": "http://qnightclub.com/event/customs-sophie/"
+          "url": "https://kremwerk.strangertickets.com/events/28913838/lefto-sassyblack-ladyryan-diogenes"
         },
         "date": {
-          "year": "2014",
+          "year": "2015",
           "month": "November",
           "day": "5"
         }
-      } // the last object cannot have a comma at the end!
+      }
     ]
   }
 }
