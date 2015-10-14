@@ -1,6 +1,6 @@
 {
   "events": {
-    "event": [
+    "upcoming_events": [
       {
         "id": "lido",
         "img": "images/events/lido.jpeg",
@@ -18,7 +18,7 @@
       {
         "id": "basenji",
         "img": "images/events/basenji.png",
-        "title": "Basenji",
+        "title": "Basenji, DJ Javascript, Phuey",
         "venue": "Kremwerk",
         "ticket": {
           "url": "https://www.ticketfly.com/purchase/event/963961"
@@ -41,6 +41,50 @@
           "year": "2015",
           "month": "November",
           "day": "5"
+        }
+      }
+    ],
+    "past_events": [
+      { 
+        "id": "ultrademon",
+        "img": "images/events/ultrademon.jpg",
+        "title": "Ultrademon, Komono",
+        "venue": "Kremwerk",
+        "ticket": {
+          "url": "http://kremwerk.com/event/ultrademon-komono-zenojim-graz-leukos/"
+        },
+        "date": {
+          "year": "2015",
+          "month": "January",
+          "day": "22"
+        }
+      },
+      {
+        "id": "sophie",
+        "img": "images/events/sophie.jpg",
+        "title": "Sophie, Andrea",
+        "venue": "Q Nightclub",
+        "ticket": {
+          "url": "http://qnightclub.com/event/customs-sophie/"
+        },
+        "date": {
+          "year": "2014",
+          "month": "November",
+          "day": "5"
+        }
+      },
+      {
+        "id": "addison-groove",
+        "img": "images/events/addison.jpg",
+        "title": "Addison Groove, Seimei, Korma",
+        "venue": "Chop Suey",
+        "ticket": {
+          "url": "http://chopsuey.com/calendar/dj-paypal-dj-earl-seimei-korma/"
+        },
+        "date": {
+          "year": "2014",
+          "month": "September",
+          "day": "14"
         }
       }
     ]

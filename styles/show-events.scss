@@ -1,0 +1,84 @@
+@import '_bootstrap.scss';
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+@mixin breakpoint($point) {
+	@media only screen and (min-width: $point) {
+		@content;
+	}
+}
+ 
+.container {
+	padding: 0 30px;
+	@include breakpoint(1024px) {width: 80%;}
+	@include breakpoint(1280px) {width: 60%;}
+}
+
+.section-title {
+	color: white;
+	text-align: left;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	font-size: 1.5em;
+	font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
+	font-weight: 400;
+	margin-left: -15px;
+}
+
+.event-image {
+	height: 200px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	img {
+		position: absolute;
+		margin-top: -75px;
+		height: 400px;
+		width: 100%;
+	}
+}
+
+.row {
+	padding: 30px 0;
+}
+
+.container {
+	padding-top: 50px;
+}
+
+.event-summary {
+	font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
+	@include breakpoint(768px) {padding-left: 30px;}
+	.event-title {
+		font-weight: 700;
+		font-size: 3.0em;
+		letter-spacing: 2.5px;
+		padding-bottom: 15px;
+		color: white;
+		text-transform: uppercase;
+		text-align: left;
+	}
+	.event-venue, .event-date {
+		font-weight: 700;
+		font-size: 1.5em;
+		padding-bottom: 5px;
+	}
+	.event-venue {padding-bottom: 20px;}
+	.event-ticket {
+		font-color: #9f9f9f	;
+		text-decoration: none;
+		font-size: 1.5em;
+		font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
+		font-weight: 400;
+		@include transition(all 0.3s ease);
+		&:hover {
+			opacity: 0.6;
+			@include transition(all 0.3s ease);
+		}
+	}
+}

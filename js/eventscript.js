@@ -1,18 +1,20 @@
 $(document).ready(function(){
 
 	$.getJSON('json/events.json', function( data ) {
-		$.each(data.events.event, function(i, item) {
-			var $month = $('<span>', {class: "event-date-month", text: item.date.month.substring(0,3)}),
-				$day = $('<span>', {class: "event-date-day", text: item.date.day}),
-				$imgwrp = $('<div>', {class: "img-wrapper"}),
-				$img = $('<img>', {src: item.img, class: "event-image"}),
-				$date = $('<div>', {class: "event-date"}).append($month, "</br>", $day);
-				$summary = $('<div>', {class: "event-summary"}),
-				$title = $('<h2>', {class: "event-title", text: item.title}),
-				$ticket = $('<a>', {class: "event-ticket", text: "Tickets", href: item.ticket.url}),
-				$show = $('<div>', {id: item.id, class: "event-show"});
-				$summary.append($title, $ticket);
-				$imgwrp.append($img, $date);
+		$.each(data.events.upcoming_events, function(i, item) {
+			var $month = $('<span>', {class: 'event-date-month', text: item.date.month.substring(0,3)}),
+				$day = $('<span>', {class: 'event-date-day', text: item.date.day}),
+				$imgwrp = $('<div>', {class: 'img-wrapper'}),
+				$imga = $('<a>', {class: 'img-a', href: 'shows.html#' + item.id}),
+				$img = $('<img>', {src: item.img, class: 'event-image'}),
+				$date = $('<div>', {class: 'event-date'}).append($month, '</br>', $day);
+				$title = $('<h2>', {class: 'event-title', text: item.title}),
+				$ticket = $('<a>', {class: 'event-ticket', text: 'Tickets', href: item.ticket.url}),
+				$summary = $('<div>', {class: 'event-summary'}).append($title, $ticket),
+				$show = $('<div>', {id: item.id, class: 'event-show'});
+				$imga.attr({'data-before': item.venue, 'data-after': item.date.month.substring(0,3) + " " + item.date.day});
+				$imga.append($img, $date);
+				$imgwrp.append($imga);
 				$show.append($imgwrp, $summary);
 				$('.events-container').append($show);
 		});
@@ -25,25 +27,25 @@ $(document).ready(function(){
 			slidesToScroll: 4,
 	  		responsive: [
 			    {
-			      breakpoint: 1024,
-			      settings: {
-			        slidesToShow: 3,
-			        slidesToScroll: 3,
-			      }
-			    },
-			    {
-			      breakpoint: 768,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 2
-			      }
-			    },
-			    {
-			      breakpoint: 480,
-			      settings: {
-			        slidesToShow: 2,
-			        slidesToScroll: 2
-			      }
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
 			    }
 			  ],
 		});

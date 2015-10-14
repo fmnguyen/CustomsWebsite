@@ -12,6 +12,20 @@
 	}
 }
 
+/* Clearfix */
+.clearfix {
+	zoom:1;
+	&:before, &:after {
+		content: "\0020";
+		display: block;
+		height: 0;
+		@extend .clearfix;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
 .event-carousel {
 	position: relative;
 	margin: 30px auto;
@@ -44,10 +58,10 @@
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
 	font-size: 1.0em;
-	font-family: "Helvetica-Neue", Helvetica, sans-serif;
+	font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
+	font-weight: 400;
 	padding-bottom: 20px;
 	margin-left: 13px;
-
 }
 
 .events-container {
@@ -55,6 +69,7 @@
 	width: 100%;
 	.event-show {&:focus{outline:none;}}
 }
+
 
 .img-wrapper {
 	height: 75%;
@@ -67,6 +82,59 @@
 	}
 }
 
+.img-a {
+	@extend .clearfix;
+	&:hover {
+		&:before {
+			opacity: 1.0;
+			-webkit-transform: translate3d(0, 0, 0);
+	    	transform: translate3d(0, 0, 0);
+	    	z-index: 1;
+	    	@include transition(all 0.4s ease);
+		}
+		&:after {
+			opacity: 1.0;
+			z-index: 1;
+			-webkit-transform: translate3d(0, 0, 0);
+	    	transform: translate3d(0, 0, 0);
+	    	@include transition(all 0.4s ease);
+		}
+	}
+
+	&:before {
+		@extend .event-hover;
+		font-size: 1.2em;
+		line-height: 40vh;
+		content: attr(data-before);
+		-webkit-transform: translate3d(-100%, 0, 0);
+    	transform: translate3d(-100%, 0, 0);
+
+	}
+	&:after {
+		@extend .event-hover;
+		bottom: 0;
+		font-size: 1.0em;
+		content: attr(data-after);
+		font-weight: 100;
+		text-transform: uppercase;
+		-webkit-transform: translate3d(100%, 0, 0);
+    	transform: translate3d(100%, 0, 0);
+    	
+	}
+}
+
+.event-hover {
+	width: 100%;
+	position: absolute;
+	height: 50%;
+	background-color: #2e2e2e;
+	opacity: 0;
+	text-align: center;
+	font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
+	color: white;
+	@include transition(all 0.2s ease);
+}
+
 .event-date {
 	position: absolute;
 	right: 10px;
@@ -75,8 +143,11 @@
 	background-color: rgba(255, 255, 255, 1.0);
 	padding: 10px 10px;
 	text-transform: uppercase;
-	font-family: "Helvetica-Neue", Helvetica, sans-serif;
+	font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 700;
 	/*border: 1px #A2A2A2 solid;*/
+	span {color: black;}
 
 	.event-date-month {
 		font-size: 0.7em;
@@ -101,8 +172,30 @@
 	.event-ticket {
 		font-color: #999;
 		text-decoration: none;
-		font-size: 0.9em;
-		font-family: "Helvetica-Neue", Helvetica, sans-serif;
-		font-weight: 300;
+		font-size: 1.0em;
+		font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
+		font-weight: 400;
+		@include transition(all 0.3s ease);
+		&:hover {
+			opacity: 0.6;
+			@include transition(all 0.3s ease);
+		}
 	}
+}
+
+.social a {
+	@include transition(all 0.3s ease);
+	&:hover {
+		opacity: 0.6;
+		@include transition(all 0.3s ease);
+	}
+}
+
+.container {
+	width: 85% !important;
+	@include breakpoint(768px) {width: 45% !important;}
+}
+
+label {
+	font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
 }
