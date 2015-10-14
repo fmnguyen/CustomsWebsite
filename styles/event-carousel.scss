@@ -86,52 +86,26 @@
 	@extend .clearfix;
 	&:hover {
 		&:before {
-			opacity: 1.0;
-			-webkit-transform: translate3d(0, 0, 0);
-	    	transform: translate3d(0, 0, 0);
-	    	z-index: 1;
+			opacity: 0.4;
 	    	@include transition(all 0.4s ease);
 		}
 		&:after {
-			opacity: 1.0;
-			z-index: 1;
-			-webkit-transform: translate3d(0, 0, 0);
-	    	transform: translate3d(0, 0, 0);
+			opacity: 0.4;
 	    	@include transition(all 0.4s ease);
 		}
 	}
 
 	&:before {
 		@extend .event-hover;
-		font-size: 1.2em;
-		line-height: 40vh;
-		content: attr(data-before);
-		-webkit-transform: translate3d(-100%, 0, 0);
-    	transform: translate3d(-100%, 0, 0);
-
-	}
-	&:after {
-		@extend .event-hover;
-		bottom: 0;
-		font-size: 1.0em;
-		content: attr(data-after);
-		font-weight: 100;
-		text-transform: uppercase;
-		-webkit-transform: translate3d(100%, 0, 0);
-    	transform: translate3d(100%, 0, 0);
-    	
 	}
 }
 
 .event-hover {
 	width: 100%;
 	position: absolute;
-	height: 50%;
+	height: 100%;
 	background-color: #2e2e2e;
 	opacity: 0;
-	text-align: center;
-	font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
-	color: white;
 	@include transition(all 0.2s ease);
 }
 
@@ -170,11 +144,12 @@
 		color: white;
 	}
 	.event-ticket {
-		font-color: #999;
+		font-color: white;
 		text-decoration: none;
 		font-size: 1.0em;
 		font-family: "futura-pt", "Helvetica-Neue", Helvetica, sans-serif;
 		font-weight: 400;
+		opacity: 0.9;
 		@include transition(all 0.3s ease);
 		&:hover {
 			opacity: 0.6;
