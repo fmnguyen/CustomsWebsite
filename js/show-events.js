@@ -47,15 +47,17 @@ $(document).ready(function(){
 				$imgwrp = $('<div>', {class: 'event-image col-xs-12 col-sm-4'}).append($img),
 
 				$title = $('<h2>', {class: 'event-title', text: item.title}),
-				$date = $('<p>', {class: 'event-date', text: $time});
+				$date = $('<p>', {class: 'event-date', text: $time}),
 				$venue = $('<p>', {class: 'event-venue', text: item.venue}),
-				$ticket = $('<a>', {class: 'event-ticket', text: 'Tickets', href: item.ticket.url, target:'_blank'}),
-
-				$summary = $('<div>', {class: 'event-summary col-xs-12 col-sm-8'}),
+				$ticket,
+				$summary = $('<div>', {class: 'event-summary col-xs-12 col-sm-8'})
+				if('ticket' in item) {
+					$ticket = $('<a>', {class: 'event-ticket', text: 'Tickets', href: item.ticket.url, target:'_blank'}),
+					$summary.append($title, $date, $venue, $ticket);
+				} else {
+					$summary.append($title, $date, $venue);
+				}
 				$row = $('<div>', {class: 'upcoming-events row', id: item.id}),
-
-				$summary.append($title, $date, $venue, $ticket);
-
 				$row.append($imgwrp, $summary);
 				$('.past').append($row);
 		});

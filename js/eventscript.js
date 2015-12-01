@@ -1,16 +1,23 @@
 $(document).ready(function(){
-
 	$.getJSON('json/events.json', function( data ) {
+		console.log(data);
 		$.each(data.events.upcoming_events, function(i, item) {
 			var $month = $('<span>', {class: 'event-date-month', text: item.date.month.substring(0,3)}),
 				$day = $('<span>', {class: 'event-date-day', text: item.date.day}),
 				$imgwrp = $('<div>', {class: 'img-wrapper'}),
 				$imga = $('<a>', {class: 'img-a', href: 'shows.html#' + item.id}),
 				$img = $('<img>', {src: item.img, class: 'event-image'}),
-				$date = $('<div>', {class: 'event-date'}).append($month, '</br>', $day);
+				$date = $('<div>', {class: 'event-date'}).append($month, '</br>', $day),
 				$title = $('<h2>', {class: 'event-title', text: item.title}),
-				$ticket = $('<a>', {class: 'event-ticket', text: 'Tickets', href: item.ticket.url}),
-				$summary = $('<div>', {class: 'event-summary'}).append($title, $ticket),
+				$ticket,
+				$summary;
+				if('ticket' in item) {
+					$ticket = $('<a>', {class: 'event-ticket', text: 'Tickets', href: item.ticket.url});
+					$summary = $('<div>', {class: 'event-summary'}).append($title, $ticket);
+				} else {
+					$summary = $('<div>', {class: 'event-summary'}).append($title);
+				}
+				console.log($summary);
 				$show = $('<div>', {id: item.id, class: 'event-show'});
 				$imga.attr({'data-before': item.venue, 'data-after': item.date.month.substring(0,3) + " " + item.date.day});
 				$imga.append($img, $date);
